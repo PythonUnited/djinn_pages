@@ -11,5 +11,4 @@ def get_js():
 
 def get_css():
 
-    # return ["djinn_pages.css"]
-    return []
+    return ["djinn_pages.css"]
