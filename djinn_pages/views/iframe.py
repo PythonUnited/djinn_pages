@@ -10,5 +10,9 @@ class IFrameView(TemplateView):
         ctx = super(IFrameView, self).get_context_data(**kwargs)
 
         ctx['view'] = self
+        try:
+            ctx['load_url'] = self.request.REQUEST['load_url']
+        except:
+            pass
 
         return ctx
