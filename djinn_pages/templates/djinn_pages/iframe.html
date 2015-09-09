@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
+{% load pusimpletext_tags %}
+
+{% block body_class %}serviceplein{% endblock %}
+
+{% block pre_container %}
+
+  {% pusimpletext 'serviceplein' %}
+
+{% endblock %}
 
 {% block container %}
 
-<iframe class="fullbox" sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation" src="{{ load_url }}"></iframe>
+    <div id="ifrmcontent">
+        <iframe class="fullbox" sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation" src="{{ load_url }}"></iframe>
+    </div>
 
 {% endblock %}
