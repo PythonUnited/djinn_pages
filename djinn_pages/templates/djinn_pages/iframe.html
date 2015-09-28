@@ -12,7 +12,7 @@
 {% block container %}
 
     <div id="ifrmcontent">
-        <iframe class="fullbox" sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation" src="{{ load_url }}"></iframe>
+        <iframe class="fullbox" seamless='seamless' sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation allow-popups" src="{{ load_url }}"></iframe>
     </div>
 
 {% endblock %}
