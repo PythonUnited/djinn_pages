@@ -6,8 +6,7 @@ def get_urls():
 
 def get_js():
 
-    # return ["djinn_pages.js"]
-    return []
+    return ["djinn_pages.js"]
 
 def get_css():
 
