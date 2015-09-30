@@ -7,7 +7,12 @@ window.onresize = function(event) {
 }
 
 function resizeDiv() {
-    headheight = $(".fullbox").offset().top;
+    head_offset = $(".fullbox").offset();
+    if (head_offset){
+        headheight = head_offset.top;
+    } else {
+        headheight = 0;
+    }
     vph = $(window).height()-headheight-1;
     $(".fullbox").css({"height": vph});
 }
