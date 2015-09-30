@@ -11,7 +11,7 @@ requires = [
     ]
 
 setup(name='djinn_pages',
-      version="1.0.0",
+      version="1.0.2",
       description='Djinn Intranet Pages',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
