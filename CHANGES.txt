@@ -1,3 +1,7 @@
+1.0.3
+=====
+* added flexible menuitems mechanism
+
 1.0.2
 =====
 * nullpointer bugfix
