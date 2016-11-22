@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from django.db import models
 
 
@@ -13,7 +14,15 @@ class MenuItem(models.Model):
 
     @property
     def has_sub(self):
-        return self.menuitem_set.exists()
+
+        cache_key = "menu-item-%d-has_sub" % self.id
+        _has_sub = cache.get(cache_key)
+
+        if _has_sub == None:
+            _has_sub = self.menuitem_set.exists()
+            cache.set(cache_key, _has_sub)
+
+        return _has_sub
 
     class Meta:
         ordering = ['order']
