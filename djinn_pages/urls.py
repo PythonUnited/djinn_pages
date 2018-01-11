@@ -1,16 +1,16 @@
-from django.conf.urls import patterns, url, include
-from views.iframe import IFrameView
+from django.conf.urls import url
+from django.urls import include
+
+from .views.iframe import IFrameView
 
 
-_urlpatterns = patterns(
-    "",
+_urlpatterns = [
     url(r"^ipage",
         IFrameView.as_view(),
         name="djinn_pages_iframeview"),
 
-    )
+]
 
-urlpatterns = patterns(
-    '',
-    (r'^djinn_pages/', include(_urlpatterns)),
-)
+urlpatterns = [
+    url(r'^djinn_pages/', include(_urlpatterns)),
+]

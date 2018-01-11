@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title', models.CharField(max_length=20)),
                 ('url', models.CharField(default=b'#', max_length=256, null=True, blank=True)),
-                ('parent', models.ForeignKey(default=None, blank=True, to='djinn_pages.MenuItem', null=True)),
+                ('parent', models.ForeignKey(default=None, blank=True, to='djinn_pages.MenuItem', null=True, on_delete=models.SET_NULL)),
             ],
         ),
     ]

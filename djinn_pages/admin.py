@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import MenuItem
+from .models import MenuItem
 
 
 class MenuItemAdminInline(admin.TabularInline):
