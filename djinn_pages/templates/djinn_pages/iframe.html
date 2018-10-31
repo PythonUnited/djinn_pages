@@ -11,6 +11,10 @@
 
 {% block container %}
 
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
     <div id="ifrmcontent">
         {% comment %}
         <iframe class="fullbox" seamless='seamless' sandbox="allow-scripts allow-forms allow-same-origin allow-top-navigation allow-popups" src="{{ load_url }}"></iframe>
@@ -18,7 +22,7 @@
          - download pdf's nadat vanuit topdesk de download pagina geopend werd
          - niet laden van silverlight app (repro-pagina in topdesk)
         {% endcomment %}
-        <iframe class="fullbox" seamless='seamless' src="{{ load_url }}"></iframe>
+        <iframe class="fullbox" seamless='seamless' src="{{ validated_url }}"></iframe>
     </div>
 
 {% endblock %}

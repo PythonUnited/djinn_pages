@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from djinn_pages.models import AllowedIFrameURL
 from .models import MenuItem
 
 
@@ -14,3 +16,10 @@ class MenuItemAdmin(admin.ModelAdmin):
     inlines = [MenuItemAdminInline]
 
 admin.site.register(MenuItem, MenuItemAdmin)
+
+
+class AllowedIFrameURLAdmin(admin.ModelAdmin):
+
+    list_display = ('url_name', 'url')
+
+admin.site.register(AllowedIFrameURL, AllowedIFrameURLAdmin)
