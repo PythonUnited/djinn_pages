@@ -5,6 +5,16 @@ from djinn_pages.models import AllowedIFrameURL
 
 class IFrameView(TemplateView):
 
+    '''
+    Let op, de site die in de iframe geladen moet worden moet
+    1. van dezelfde server komen of
+    2. header NIET zetten
+       dit blokkeert namelijk de iframe: X-frame-options: sameorigin
+
+    zie:
+    https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+
+    '''
     template_name = 'djinn_pages/iframe.html'
 
     def get_context_data(self, **kwargs):
