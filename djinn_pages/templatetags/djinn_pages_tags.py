@@ -14,9 +14,9 @@ def custommenu(context, parent=None):
     return context
 
 @register.inclusion_tag('gronet_v3/includes/menuitem.html', takes_context=True)
-def custommenu_v3(context, parent=None):
+def custommenu_v3(context, parent=None, flat=False):
 
     menuitems = MenuItem.objects.filter(parent = parent)
 
-    context.update({'menuitems': menuitems})
+    context.update({'menuitems': menuitems, 'flat': flat})
     return context
